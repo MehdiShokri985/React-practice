@@ -1,3 +1,28 @@
+
+
+
+
+ 
+
+  
+
+
+//#region  1 Arrow Function 
+  const functionName = (parameters) => {
+  // function body
+  }
+
+  const add = (a, b) => a + b;
+  console.log(add(3, 5)); // 8
+
+//#endregion
+
+
+
+
+
+
+
 const response = {
   status: 200,
   data: {
