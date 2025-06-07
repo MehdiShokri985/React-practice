@@ -1,13 +1,24 @@
 import Test from "./Test";
 import Header from "./Header";
 import CourseList from "./CourseList";
+import Banner from "./Banner";
+import Counter from "./Counter";
+import Form from "./Form";
 function App() {
 
   return (
     <div>
-      <Header />
-      <h1>Mehdi</h1>
-      <CourseList />
+
+      {/* <Form /> */}
+       {/* <Header /> */}
+      <Banner 
+      title="Cryptobot" 
+      description="This is a bot work in DYDX"
+      rumberofstudent = {200}
+      />
+     
+      {/* <Counter /> */}
+       {/* <CourseList />  */}
     </div> 
   )
 }

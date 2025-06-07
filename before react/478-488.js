@@ -858,3 +858,132 @@ console.log(MathTools.subtract(100, 40)); // 👉 60
 //#endregion
 
 //#endregion
+
+//#region Video 515 state
+//1-With states we can define and maintain information.
+//2-It keeps tens in our component throughout the program.
+//3-It also controls the UI data, meaning that whenever the data inside the state changes, the state causes the component to be re-rendered.
+//#endregion
+
+//#region Video 516 state hook (useState)
+
+// 1 - import { useState } from "react";
+
+//#endregion
+
+//#region Video 517 define state and changhe it
+const hook = useState(0);
+console.log(hook);
+// The output of the useState is always an array that has two elements.
+// The first element is the value that we initially give to the useState,
+// and the second element is a function with which the value can be updated.
+
+//Destructuring
+//    First Val , update function
+const [counter, setCounter] = useState(0);
+//[0,function for update]
+
+//it must be at the top level of the component,
+//meaning the highest point of the component.
+
+// use useState in event function
+const increaseHandler = () => setCounter(counter + 1);
+
+//#endregion
+
+//#region Video 519 async setState
+
+//React run just one of these setCounter for better performance and efficiency.
+const increaseHandler3 = () => {
+  setCounter(counter + 1);
+  setCounter(counter + 1);
+  setCounter(counter + 1);
+};
+//To change the current state value, we need the previous state value.
+const increaseHandler_3 = () => {
+  setCounter((counter) => counter + 1);
+  setCounter((counter) => counter + 1);
+  setCounter((counter) => counter + 1);
+};
+
+//#endregion
+
+//#region video 521
+   //in conpponent Counter.jsx  Added this
+   const [isShow,setIsShow] = useState(true);
+
+//#endregion
+
+//#region video 522 react-devtools
+
+  //Add Extention react-devtools
+//#endregion
+
+//#region  video 523 log Event
+const Form =() =>{
+
+    const loginHandler = (event) =>{
+
+        console.log(event.target);
+        console.log("Login");
+    };
+
+    return (
+    <div>
+        <button onClick={loginHandler}>Login</button>
+    </div>
+    )
+
+}
+
+//#endregion
+
+//#region video 524 Getting values ​​from inputs and send to parent
+
+  const [email1,setEmail] = useState(""); 
+  const [password,setPassword] = useState(""); 
+
+  const loginHandler = () =>{
+       console.log(email);
+       console.log(password);  
+    };
+
+   const emailHadler =(event) =>{ setEmail(event.target.value); }
+
+    const passwordHandler =(event) =>{
+
+        setPassword(event.target.value)
+    }
+
+    return (
+        <div>
+            <input 
+                type="password" 
+                placeholder="password" 
+                value={password} 
+                onChange={passwordHandler} 
+            />
+
+            <input type="text" placeholder="Email" value={email1} onChange={emailHadler}  />
+            <button onClick={loginHandler}>Login</button>
+        </div>
+    )
+
+//#endregion
+
+//#region video 225 select options
+const [role,setRole] = useState("user"); 
+const selectHandler = (event) =>{
+        //console.log(event.target.value);
+        setRole(event.target.value);
+    }
+return(
+<select value={role} onChange={selectHandler} > 
+            <option value="Admin">Admin</option>
+            <option value="user">user</option>
+            <option value="edito">edito</option>
+ </select>
+)
+
+
+//#endregion
